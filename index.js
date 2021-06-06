@@ -137,7 +137,8 @@ baseTerms.forEach(term => {
     delimiter: ',',
     header: true,
     columns: searchTerms
-  })
+  });
+  // Add number of terms to the total.
   totalSearchTerms += searchTerms.length * locations.length;
   
   locations.forEach(x => {
@@ -150,4 +151,4 @@ baseTerms.forEach(term => {
   let stream = fs.createWriteStream(`./output/${title}.csv`);
   stringifier.pipe(stream);
 })
-console.log(totalSearchTerms);
+console.log(`* Total search terms generated: ${totalSearchTerms}`);
