@@ -140,9 +140,9 @@ baseTerms.forEach(term => {
   const count = searchTerms.length * locations.length;
   totalSearchTerms += count;
   // Headers
-  stringifier.write(["Main search term:", title]);
-  stringifier.write(["Total terms generated:", count]);
-  stringifier.write([]);
+  stringifier.write(["Topic:", title]);
+  stringifier.write(["Total terms generated", count, "", "Total final keywords", searchTerms.length, "", "Sub-terms", locations.length]);
+  stringifier.write(["Keywords"]);
   stringifier.write(searchTerms);
   
   locations.forEach(x => {
