@@ -72,6 +72,7 @@ const suffixes = [
   'Solutions company'
 ];
 
+/*
 let topics = [
   createTerm('Cyber Security', {
     prefixes: [...prefixes],
@@ -121,6 +122,37 @@ let topics = [
     terms: ['governance risk and compliance'],
     prefixes: [...prefixes],
     suffixes: [...suffixes, 'vendors'],
+    exact: [],
+  }),
+];
+*/
+
+let topics = [
+  createTerm('Cyber Security', {
+    exact: [],
+  }),
+  createTerm('CERT-IN Cyber Security Audit', {
+    exact: [],
+  }),
+  createTerm('ISO Compliance', {
+    exact: [],
+  }),
+  createTerm('PCI DSS Compliance', {
+    exact: [],
+  }),
+  createTerm('SOC Compliance', {
+    exact: [],
+  }),
+  createTerm('HIPAA Compliance', {
+    exact: ['hipaa compliance officer'],
+  }),
+  createTerm('GDPR Compliance', {
+    exact: ['gdpr compliance officer'],
+  }),
+  createTerm('FISMA Compliance', {
+    exact: [],
+  }),
+  createTerm('GRC Compliance', {
     exact: [],
   }),
 ];
