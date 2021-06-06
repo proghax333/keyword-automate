@@ -134,12 +134,16 @@ baseTerms.forEach(term => {
   const title = term.title;
   const searchTerms = term.terms;
   const stringifier = stringify({
-    delimiter: ',',
-    header: true,
-    columns: searchTerms
+    delimiter: ','
   });
   // Add number of terms to the total.
-  totalSearchTerms += searchTerms.length * locations.length;
+  const count = searchTerms.length * locations.length;
+  totalSearchTerms += count;
+  // Headers
+  stringifier.write(["Main search term:", title]);
+  stringifier.write(["Total terms generated:", count]);
+  stringifier.write([]);
+  stringifier.write(searchTerms);
   
   locations.forEach(x => {
     let result = null;
