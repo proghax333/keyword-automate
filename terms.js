@@ -2,17 +2,18 @@
 const { combinations } = require('./cartesian');
 
 function createTerm(term, props) {
-  return {
+  const result = {
     title: term,
     terms: [term, ...(props.terms || [])],
     prefixes: props.prefixes || [],
     suffixes: props.suffixes || [],
     exact: props.exact || []
   };
+  return result;
 }
 
 function generateSearchTerms(term) {
-  let result = combinations(term.prefixes, term.terms, term.suffixes).concat(combinations(term.prefixes, term.exact));
+  let result = combinations(term.prefixes, term.terms, term.suffixes).concat(combinations(term.exact, [undefined]));
   result = result.map(arr => arr.join(' '));
 
   return {
